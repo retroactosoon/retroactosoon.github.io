@@ -1,92 +1,143 @@
 <!DOCTYPE html>
-<html>
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retroacto - Repurly</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Aileron', sans-serif;
+        }
 
-.bgimg {
-  background-image: url('./img/1_bgimg.png');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-}
+        .top-section {
+            background-color: #004a98;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative; /* For logo positioning */
+        }
 
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
+        .top-section h1 {
+            font-size: 81px;
+            margin-bottom: 20px;
+        }
 
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
+        .top-section button {
+            background-color: #004a98;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 35px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 0;
+            font-family: 'Aileron', sans-serif;
+            width: 200px;
+        }
 
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 47.5%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+        .who-we-are, .what-we-do, .get-in-touch {
+            display: flex;
+            align-items: center;
+            height: 75vh;
+        }
 
-hr {
-  margin: auto;
-  width: 40%;
-}
-</style>
+        .who-we-are {
+            background-color: #005dbf;
+            color: white;
+            padding: 20px;
+        }
+
+        .what-we-do {
+            background-color: #004a98;
+            color: white;
+            padding: 20px;
+        }
+
+        .get-in-touch {
+            background-color: #005dbf;
+            color: white;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 45px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .image-placeholder {
+            width: 30%;
+            height: 400px;
+            margin-right: 20px;
+        }
+
+        .text-section {
+            width: 65%;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .delivery-teams {
+            color: #42b8fd;
+        }
+
+        .contact-info {
+          font-size:14px;
+        }
+        .contact-info span {
+            color: #42b8fd;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px; /* Adjust as needed */
+            height: auto;
+        }
+    </style>
+</head>
 <body>
 
-<div class="bgimg">
-  <div class="middle">
-    <h1>COMING SOON</h1>
-    <hr>
-    <p id="demo" style="font-size:30px"></p>
-  </div>
-  <div class="bottomleft">
-    <p style="font-size:10px">
-      Copyright &copy; 2023 Retroacto.com
-    </p>
-  </div>
-</div>
+    <div class="top-section">
+        <img src="./img/Retrologo.png" alt="Retroacto Logo" class="logo"> <h1>Powering <span class="delivery-teams">Delivery Teams</span> with Repurly</h1>
+        <a href="https://repurly.com/"><button>Know More</button></a>
+    </div>
 
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Apr 17, 2023 15:37:25").getTime();
+    <div class="who-we-are">
+        <div>
+            <!-- <img src="./img/1.png" class="image-placeholder"/> -->
+        </div>
+        <div class="text-section">
+            <h2 class="section-title">Who we are</h2>
+            <p>Retroacto Private Limited, located in Chennai, India, is dedicated to revolutionizing project delivery. We've developed Repurly, a SaaS product designed to simplify and streamline project management using the PDLR framework. Our mission is to empower delivery teams with the tools they need to achieve exceptional results.</p>
+        </div>
+    </div>
 
-// Update the count down every 1 second
-var countdownfunction = setInterval(function() {
+    <div class="what-we-do">
+        <div class="text-section">
+            <h2 class="section-title">What we do</h2>
+            <p>Repurly is a comprehensive project delivery platform that simplifies the complexities of project management. We leverage the PDLR framework to provide a structured and efficient approach to project execution. Our platform offers features for planning, tracking, reporting, and collaboration, all designed to enhance productivity and ensure project success.</p>
+        </div>
+        <div>
+            <!-- <img src="./img/2.png" class="image-placeholder"/> -->
+        </div>
+    </div>
 
-  // Get todays date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is over, write some text
-  if (distance < 0) {
-    clearInterval(countdownfunction);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
+    <div class="get-in-touch">
+        <div>
+            <!-- <img src="./img/3.png" class="image-placeholder"/> -->
+        </div>
+        <div class="text-section">
+            <h2 class="section-title">Get in touch</h2>
+            <p class="contact-info"><span>Email:</span> contact@retroacto.com<br>
+               <span>Address:</span> Retroacto Private Limited, Tamarai Tech Park, Guindy, Chennai, Tamil Nadu, India.</p>
+        </div>
+    </div>
 
 </body>
 </html>
