@@ -1,143 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retroacto - Repurly</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Aileron', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Retroacto - Repurly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      color: #ffffff;
+    }
 
-        .top-section {
-            background-color: #004a98;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            position: relative; /* For logo positioning */
-        }
+    .top-section {
+      background-color: #004a98;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+      padding: 40px 20px;
+    }
 
-        .top-section h1 {
-            font-size: 81px;
-            margin-bottom: 20px;
-        }
+    .top-section h1 {
+      font-size: 72px;
+      line-height: 1.3;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
 
-        .top-section button {
-            background-color: #004a98;
-            color: white;
-            border: 2px solid white;
-            padding: 15px 35px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 0;
-            font-family: 'Aileron', sans-serif;
-            width: 200px;
-        }
+    .top-section button {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 18px 40px;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 240px;
+      transition: all 0.3s ease;
+    }
 
-        .who-we-are, .what-we-do, .get-in-touch {
-            display: flex;
-            align-items: center;
-            height: 75vh;
-        }
+    .top-section button:hover {
+      background-color: white;
+      color: #004a98;
+    }
 
-        .who-we-are {
-            background-color: #005dbf;
-            color: white;
-            padding: 20px;
-        }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 250px;
+      height: auto;
+    }
 
-        .what-we-do {
-            background-color: #004a98;
-            color: white;
-            padding: 20px;
-        }
+    .section {
+      display: flex;
+      align-items: stretch;
+      gap: 60px;
+      padding: 100px 80px;
+      flex-wrap: wrap;
+      line-height: 2;
+      font-size: 21px;
+      background-color: #005dbf;
+    }
 
-        .get-in-touch {
-            background-color: #005dbf;
-            color: white;
-            padding: 20px;
-        }
+    .section-title {
+      font-size: 44px;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
 
-        .section-title {
-            font-size: 45px;
-            text-align: left;
-            margin-bottom: 20px;
-        }
+    .image-placeholder {
+      flex: 1 1 45%;
+      max-width: 600px;
+      height: auto;
+      display: flex;
+      align-items: stretch;
+    }
 
-        .image-placeholder {
-            width: 30%;
-            height: 400px;
-            margin-right: 20px;
-        }
+    .image-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
 
-        .text-section {
-            width: 65%;
-            font-size: 18px;
-            text-align: left;
-        }
+    .text-section {
+      flex: 1 1 50%;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-        .delivery-teams {
-            color: #42b8fd;
-        }
+    .delivery-teams {
+      color: #42b8fd;
+    }
 
-        .contact-info {
-          font-size:14px;
-        }
-        .contact-info span {
-            color: #42b8fd;
-        }
+    .contact-info {
+      font-size: 21px;
+      line-height: 2;
+    }
 
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 150px; /* Adjust as needed */
-            height: auto;
-        }
-    </style>
+    .contact-info span {
+      color: #42b8fd;
+      font-weight: bold;
+    }
+
+    .what-we-do {
+      background-color: #004a98;
+    }
+
+    .copyright {
+      background-color: #003e7e;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 16px;
+      color: white;
+    }
+
+    .copyright a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .copyright a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1024px) {
+      .top-section h1 {
+        font-size: 50px;
+      }
+
+      .section {
+        padding: 60px 30px;
+      }
+
+      .section-title {
+        font-size: 36px;
+        text-align: center;
+      }
+
+      .text-section, .image-placeholder {
+        flex: 1 1 100%;
+        max-width: 100%;
+        text-align: justify;
+      }
+
+      .top-section button {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .logo {
+        width: 140px;
+        top: 15px;
+        left: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-section h1 {
+        font-size: 38px;
+      }
+
+      .section {
+        padding: 40px 20px;
+        gap: 30px;
+      }
+
+      .text-section {
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="top-section">
-        <img src="./img/Retrologo.png" alt="Retroacto Logo" class="logo"> <h1>Powering <span class="delivery-teams">Delivery Teams</span> with Repurly</h1>
-        <a href="https://repurly.com/"><button>Know More</button></a>
-    </div>
+  <div class="top-section">
+    <img src="img/Retrologo.png" alt="Retroacto Logo" class="logo" />
+    <h1>Powering <span class="delivery-teams">Delivery Teams</span> with Repurly</h1>
+    <a href="https://repurly.com/"><button>Book a Demo</button></a>
+  </div>
 
-    <div class="who-we-are">
-        <div>
-            <!-- <img src="./img/1.png" class="image-placeholder"/> -->
-        </div>
-        <div class="text-section">
-            <h2 class="section-title">Who we are</h2>
-            <p>Retroacto Private Limited, located in Chennai, India, is dedicated to revolutionizing project delivery. We've developed Repurly, a SaaS product designed to simplify and streamline project management using the PDLR framework. Our mission is to empower delivery teams with the tools they need to achieve exceptional results.</p>
-        </div>
+  <div class="section who-we-are">
+    <div class="image-placeholder">
+      <img src="img/1.png" alt="Who We Are Image" />
     </div>
+    <div class="text-section">
+      <h2 class="section-title">Who we are</h2>
+      <p>Retroacto is a dedicated software product development company, born from a vision to revolutionize how teams approach project delivery. We understand the complexities of modern software development, and we've channeled that understanding into Repurly. This platform is more than just a tool; it's a comprehensive solution designed to empower teams embracing Agile and Scaled Agile principles. Our expertise lies in simplifying intricate processes, enabling teams of all sizes to navigate projects with unprecedented efficiency. We believe in fostering collaboration and delivering measurable results, ensuring that every project reaches its full potential. Retroacto is committed to driving innovation, and Repurly is the embodiment of that commitment, designed to make complex projects, simple.</p>
+    </div>
+  </div>
 
-    <div class="what-we-do">
-        <div class="text-section">
-            <h2 class="section-title">What we do</h2>
-            <p>Repurly is a comprehensive project delivery platform that simplifies the complexities of project management. We leverage the PDLR framework to provide a structured and efficient approach to project execution. Our platform offers features for planning, tracking, reporting, and collaboration, all designed to enhance productivity and ensure project success.</p>
-        </div>
-        <div>
-            <!-- <img src="./img/2.png" class="image-placeholder"/> -->
-        </div>
+  <div class="section what-we-do">
+    <div class="text-section">
+      <h2 class="section-title">What we do</h2>
+      <p>At Retroacto, we innovate within the realm of software project delivery, providing a transformative SaaS product called Repurly. We've engineered Repurly to simplify and modernize your development processes, guided by our core Plan, Deliver, Learn & Repeat (PDLR) framework. Repurly empowers you to effortlessly manage your project portfolio, ensuring clarity and control at every stage. We offer structured backlogs that drive precision, traceable sprints that provide transparency, and value-driven reflections that foster continuous improvement. Our platform facilitates repeatable delivery cycles, enabling consistent and predictable outcomes. We're dedicated to streamlining your workflow, allowing your team to focus on innovation and achieve exceptional results. Repurly is the embodiment of our commitment to efficient, agile, and effective software project delivery.</p>
     </div>
+    <div class="image-placeholder">
+      <img src="img/2.png" alt="What We Do Image" />
+    </div>
+  </div>
 
-    <div class="get-in-touch">
-        <div>
-            <!-- <img src="./img/3.png" class="image-placeholder"/> -->
-        </div>
-        <div class="text-section">
-            <h2 class="section-title">Get in touch</h2>
-            <p class="contact-info"><span>Email:</span> contact@retroacto.com<br>
-               <span>Address:</span> Retroacto Private Limited, Tamarai Tech Park, Guindy, Chennai, Tamil Nadu, India.</p>
-        </div>
+  <div class="section get-in-touch">
+    <div class="image-placeholder">
+      <img src="img/3.png" alt="Get In Touch Image" />
     </div>
+    <div class="text-section">
+      <h2 class="section-title">Get in touch</h2>
+      <p class="contact-info">
+        <span>Email:</span><br />
+        contact@retroacto.com<br /><br />
+        <span>Address:</span><br />
+        Retroacto Private Limited,<br />
+        Level 5 Tamarai Tech Park,<br />
+        Guindy, Chennai,<br />
+        Tamil Nadu, 600032 India
+      </p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    &copy; 2024 Retroacto Private Limited | <a href="https://repurly.com/terms-of-service/">Terms of Service</a>
+  </div>
 
 </body>
 </html>
